@@ -15,7 +15,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda de Contatos</title>
+  <title>Sistema de Controle de Ferramentas</title>
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
   <!-- FONT AWESOME -->
@@ -31,8 +31,8 @@
       </a>
       <div>
         <div class="navbar-nav">
-          <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Agenda</a>
-          <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Contato</a>
+          <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Controle</a>
+          <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
         </div>
       </div>
     </nav>

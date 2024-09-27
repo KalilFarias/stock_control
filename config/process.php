@@ -14,15 +14,15 @@
     if($data["type"] === "create") {
 
       $name = $data["name"];
-      $phone = $data["phone"];
+      $tool = $data["tool"];
       $observation = $data["observation"];
 
-      $query = "INSERT INTO contacts (name, phone, observation) VALUES (:name, :phone, :observation)";
+      $query = "INSERT INTO contacts (name, tool, observation) VALUES (:name, :tool, :observation)";
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
+      $stmt->bindParam(":tool", $tool);
       $stmt->bindParam(":observation", $observation);
 
       try {
@@ -39,18 +39,18 @@
     } else if($data["type"] === "edit") {
 
       $name = $data["name"];
-      $phone = $data["phone"];
+      $tool = $data["tool"];
       $observation = $data["observation"];
       $id = $data["id"];
 
       $query = "UPDATE contacts 
-                SET name = :name, phone = :phone, observation = :observation 
+                SET name = :name, tool = :tool, observation = :observation 
                 WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":name", $name);
-      $stmt->bindParam(":phone", $phone);
+      $stmt->bindParam(":tool", $tool);
       $stmt->bindParam(":observation", $observation);
       $stmt->bindParam(":id", $id);
 

@@ -12,8 +12,8 @@
         <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome" value="<?= $contact['name'] ?>" required>
       </div>
       <div class="form-group">
-        <label for="phone">Telefone do contato:</label>
-        <input type="text" class="form-control" id="phone" name="phone" placeholder="Digite o telefone" value="<?= $contact['phone'] ?>" required>
+        <label for="tool">Telefone do contato:</label>
+        <input type="text" class="form-control" id="tool" name="tool" placeholder="Digite o telefone" value="<?= $contact['tool'] ?>" required>
       </div>
       <div class="form-group">
         <label for="observation">Observações:</label>
