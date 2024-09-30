@@ -7,21 +7,23 @@
     <?php endif; ?>
     <h1 id="main-title">Controle de Ferramentas</h1>
     <?php if(count($stock) > 0): ?>
-      <table class="table" id="stocks-table">
+      <table class="table" id="stock-table">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Ferramenta Solicitada</th>
+            <th scope="col">Data</th>
+            <th scope="col">Horário da solicitação</th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <?php foreach($stock as $stocks): ?>
             <tr>
-              <td scope="row" class="col-id"><?= $stocks["id"] ?></td>
               <td scope="row"><?= $stocks["name"] ?></td>
               <td scope="row"><?= $stocks["tool"] ?></td>
+              <td scope="row"><?= $stocks["date"]?></td>
+              <td scope="row"><?= $stocks["time"]?></td>
               <td class="actions">
                 <a href="<?= $BASE_URL ?>show.php?id=<?= $stocks["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
                 <a href="<?= $BASE_URL ?>edit.php?id=<?= $stocks["id"] ?>"><i class="far fa-edit edit-icon"></i></a>

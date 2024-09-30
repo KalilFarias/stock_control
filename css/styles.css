@@ -9,13 +9,14 @@
 
 /* HOME */
 #stock-table {
-  max-width: 800px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
 #stock-table thead {
   color: #FFF;
   background-color: #007BFF;
+  width: 30px !important; 
 }
 
 .col-id {

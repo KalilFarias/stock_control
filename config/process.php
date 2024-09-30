@@ -16,14 +16,17 @@
       $name = $data["name"];
       $tool = $data["tool"];
       $observation = $data["observation"];
+      $date = $data["date"];
+      $time = $data["time"];
 
-      $query = "INSERT INTO stocks (name, tool, observation) VALUES (:name, :tool, :observation)";
+      $query = "INSERT INTO stocks (name, tool, observation, date, time) VALUES (:name, :tool, :observation, :date, :time)";
 
       $stmt = $conn->prepare($query);
-
       $stmt->bindParam(":name", $name);
       $stmt->bindParam(":tool", $tool);
       $stmt->bindParam(":observation", $observation);
+      $stmt->bindParam(param: ":date", var: $date);
+      $stmt->bindParam(param: ":time", var: $time);
 
       try {
 
@@ -57,7 +60,7 @@
       try {
 
         $stmt->execute();
-        $_SESSION["msg"] = "Contato atualizado com sucesso!";
+        $_SESSION["msg"] = "solicitação concluída com sucesso";
     
       } catch(PDOException $e) {
         // erro na conexão

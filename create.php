@@ -15,6 +15,14 @@
         <input type="text" class="form-control" id="tool" name="tool" placeholder="Digite o telefone" required>
       </div>
       <div class="form-group">
+        <label for="date">Data</label>
+        <input type="date" class="form-control" id="date" name="date" value="<?php echo date('d-m-y');?>"  required>
+      </div>
+      <div class="form-group">
+        <label for="time">Horário da solicitação</label>
+        <input type="time" class="form-control" id="time" name="time" value="<?php echo date('H:i'); ?>" required>
+      </div>
+      <div class="form-group">
         <label for="observation">Observações:</label>
         <textarea type="text" class="form-control" id="observation" name="observation" placeholder="Insira as observações" rows="3"></textarea>
       </div>
