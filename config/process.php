@@ -86,6 +86,62 @@
         echo "Erro: $error";
       }
 
+      // Logar usuário
+    } else if($data["type"] === "login") {
+      $email = $data["email"];
+      $senha = $data["senha"];
+
+      $query = "SELECT id, nome, email, senha FROM usuarios WHERE email = '$email'";
+      $cliente_login = $conn->prepare($query);
+
+      try {
+
+        $cliente_login->execute();
+        $cliente_login = $cliente_login->fetch(PDO::FETCH_ASSOC);
+        #$_SESSION["msg"] = "Devolução concluida com sucesso!";
+    
+      } catch(PDOException $e) {
+        // erro na conexão
+        $error = $e->getMessage();
+        echo "Erro: $error";
+      }
+
+      if(!empty($cliente_login)) {
+        #Verifica se a senha confere
+            if(password_verify($senha,$cliente_login['senha'])){ #A senha confere
+                
+                #Criar um token a partir de um HEX aleatório
+                $token_sessao = bin2hex(random_bytes(32));
+                
+                #Inserir o token no Banco
+                $sql = "INSERT INTO sessoes (id, usuario_id, token, data_criacao) VALUES (NULL, '$cliente_login[id]','$token_sessao',NOW())";
+                $registrar_token = $conn->prepare($sql);
+                $registrar_token->execute();
+                
+                #Armazenar o token de sessão como um cookie
+                setcookie('token_sessao',$token_sessao, time() + 3600, 'tataru-cafe');
+                $_SESSION['user_id'] = $cliente_login['id'];
+                $_SESSION['user_name'] = $cliente_login['nome'];
+                #echo 'Usuário logado';
+
+            } else { #A senha não confere
+                #echo 'Senha incorreta';
+                $_SESSION["msg"] = "Senha não confere";
+                ?>
+                <div class="alert alert-danger col-7 mx-auto" role="alert">
+                    Usuário ou senha incorretos
+                </div>
+            <?php }
+        } else {
+            #echo "Usuário não encontrado";
+            $_SESSION["msg"] = "Usuário não encontrado";
+            ?>
+                <div class="alert alert-danger col-7 mx-auto" role="alert">
+                    Usuário ou senha incorretos
+                </div>
+            <?php
+        }
+
     }
 
     // Redirect HOME

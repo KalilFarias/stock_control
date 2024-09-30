@@ -33,6 +33,7 @@
         <div class="navbar-nav">
           <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Controle</a>
           <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
+          <a class="nav-link active" href="<?= $BASE_URL ?>login.php">Login</a>
         </div>
       </div>
     </nav>
