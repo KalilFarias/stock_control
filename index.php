@@ -24,12 +24,14 @@
               <td scope="row"><?= $stocks["tool"] ?></td>
               <td class="actions">
                 <a href="<?= $BASE_URL ?>show.php?id=<?= $stocks["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
-                <a href="<?= $BASE_URL ?>edit.php?id=<?= $stocks["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
-                <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
-                  <input type="hidden" name="type" value="delete">
-                  <input type="hidden" name="id" value="<?= $stocks["id"] ?>">
-                  <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
-                </form>
+                <?php if (isset($_COOKIE['token_sessao'])) {?>
+                  <a href="<?= $BASE_URL ?>edit.php?id=<?= $stocks["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
+                  <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
+                    <input type="hidden" name="type" value="delete">
+                    <input type="hidden" name="id" value="<?= $stocks["id"] ?>">
+                    <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                  </form>
+                  <?php }?>
               </td>
             </tr>
           <?php endforeach; ?>

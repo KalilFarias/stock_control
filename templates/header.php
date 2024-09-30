@@ -32,9 +32,36 @@
       <div>
         <div class="navbar-nav">
           <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Controle</a>
-          <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
-          <a class="nav-link active" href="<?= $BASE_URL ?>login.php">Login</a>
+          <?php if (isset($_COOKIE['token_sessao'])) {?>
+            <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
+          <?php }?>
+          <!-- Botão Meu Cadastro (colapsable) -->
+          <?php if (!isset($_COOKIE['token_sessao'])) { ?>
+
+          <!-- Mostrar botão de Login se o usuário não estiver logado -->
+              <li class="nav-item col-sm-auto">
+                  <a class="nav-link navbar-content" aria-current="page" href="<?= $BASE_URL ?>login.php">Login</a>
+              </li>
+          <?php } else {?>
+
+          <!-- Mostrar o menu com o nome do usuário se ele estiver logado -->
+              <li class="nav-item dropdown col-sm-auto">
+                  <a class="nav-link dropdown-toggle navbar-content" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Olá <?php echo $_SESSION['user_name'] ?> <!-- Mostra o nome do usuário -->
+                  </a>
+                  <ul class="dropdown-menu col-sm-auto navbar-dropdown"> <!-- Menu com opções, que abre quando clica non nome do usuário -->
+                      <li><a class="dropdown-item navbar-content" href="lista-pedidos.php">Meus pedidos</a></li>
+                      <li><a class="dropdown-item navbar-content" href="cadastro.php">Editar Cadastro</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item navbar-content" href="logoff.php">Logout</a></li>
+                  </ul>
+              </li>
+          <?php } ?>
         </div>
       </div>
     </nav>
+  <!-- BOOTSTRAP JAVASCRIPT-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </header>

@@ -119,7 +119,7 @@
                 $registrar_token->execute();
                 
                 #Armazenar o token de sessão como um cookie
-                setcookie('token_sessao',$token_sessao, time() + 3600, 'tataru-cafe');
+                setcookie('token_sessao',$token_sessao, time() + 3600,"/");
                 $_SESSION['user_id'] = $cliente_login['id'];
                 $_SESSION['user_name'] = $cliente_login['nome'];
                 #echo 'Usuário logado';
