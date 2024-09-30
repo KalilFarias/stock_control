@@ -17,7 +17,7 @@
       $tool = $data["tool"];
       $observation = $data["observation"];
 
-      $query = "INSERT INTO contacts (name, tool, observation) VALUES (:name, :tool, :observation)";
+      $query = "INSERT INTO stocks (name, tool, observation) VALUES (:name, :tool, :observation)";
 
       $stmt = $conn->prepare($query);
 
@@ -43,7 +43,7 @@
       $observation = $data["observation"];
       $id = $data["id"];
 
-      $query = "UPDATE contacts 
+      $query = "UPDATE stocks 
                 SET name = :name, tool = :tool, observation = :observation 
                 WHERE id = :id";
 
@@ -69,7 +69,7 @@
 
       $id = $data["id"];
 
-      $query = "DELETE FROM contacts WHERE id = :id";
+      $query = "DELETE FROM stocks WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -78,7 +78,7 @@
       try {
 
         $stmt->execute();
-        $_SESSION["msg"] = "Contato removido com sucesso!";
+        $_SESSION["msg"] = "Devolução concluida com sucesso!";
     
       } catch(PDOException $e) {
         // erro na conexão
@@ -103,7 +103,7 @@
     // Retorna o dado de um contato
     if(!empty($id)) {
 
-      $query = "SELECT * FROM contacts WHERE id = :id";
+      $query = "SELECT * FROM stocks WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -111,20 +111,20 @@
 
       $stmt->execute();
 
-      $contact = $stmt->fetch();
+      $stock = $stmt->fetch();
 
     } else {
 
       // Retorna todos os contatos
-      $contacts = [];
+      $stock = [];
 
-      $query = "SELECT * FROM contacts";
+      $query = "SELECT * FROM stocks";
 
       $stmt = $conn->prepare($query);
 
       $stmt->execute();
       
-      $contacts = $stmt->fetchAll();
+      $stock = $stmt->fetchAll();
 
     }
 

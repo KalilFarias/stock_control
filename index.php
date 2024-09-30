@@ -6,8 +6,8 @@
       <p id="msg"><?= $printMsg ?></p>
     <?php endif; ?>
     <h1 id="main-title">Controle de Ferramentas</h1>
-    <?php if(count($contacts) > 0): ?>
-      <table class="table" id="contacts-table">
+    <?php if(count($stock) > 0): ?>
+      <table class="table" id="stocks-table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -17,17 +17,17 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach($contacts as $contact): ?>
+          <?php foreach($stock as $stocks): ?>
             <tr>
-              <td scope="row" class="col-id"><?= $contact["id"] ?></td>
-              <td scope="row"><?= $contact["name"] ?></td>
-              <td scope="row"><?= $contact["phone"] ?></td>
+              <td scope="row" class="col-id"><?= $stocks["id"] ?></td>
+              <td scope="row"><?= $stocks["name"] ?></td>
+              <td scope="row"><?= $stocks["tool"] ?></td>
               <td class="actions">
-                <a href="<?= $BASE_URL ?>show.php?id=<?= $contact["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
-                <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
+                <a href="<?= $BASE_URL ?>show.php?id=<?= $stocks["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
+                <a href="<?= $BASE_URL ?>edit.php?id=<?= $stocks["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
                 <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
                   <input type="hidden" name="type" value="delete">
-                  <input type="hidden" name="id" value="<?= $contact["id"] ?>">
+                  <input type="hidden" name="id" value="<?= $stocks["id"] ?>">
                   <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                 </form>
               </td>

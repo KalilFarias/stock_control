@@ -8,12 +8,12 @@
 }
 
 /* HOME */
-#contacts-table {
+#stock-table {
   max-width: 800px;
   margin: 0 auto;
 }
 
-#contacts-table thead {
+#stock-table thead {
   color: #FFF;
   background-color: #007BFF;
 }
