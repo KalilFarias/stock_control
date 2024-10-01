@@ -125,6 +125,7 @@
                 setcookie('token_sessao',$token_sessao, time() + 3600,"/");
                 $_SESSION['user_id'] = $cliente_login['id'];
                 $_SESSION['user_name'] = $cliente_login['nome'];
+                $_SESSION['is_admin'] = $cliente_login['is_admin'];
                 #echo 'Usuário logado';
 
             } else { #A senha não confere
@@ -191,3 +192,4 @@
 
   // FECHAR CONEXÃO
   $con = null;
+  #TESTESTESTE
