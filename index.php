@@ -20,8 +20,13 @@
         <tbody>
           <?php foreach($stock as $stocks): ?>
             <tr>
+<<<<<<< HEAD
               <td scope="row"><?= $stocks["name"]?></td>
               <td scope="row"><?= $stocks["tool"]?></td>
+=======
+              <td scope="row"><?= $stocks["name"] ?></td>
+              <td scope="row"><?= $stocks["tool"] ?></td>
+>>>>>>> 6bf788103d33a888b059a49c04624594e0f177da
               <td scope="row"><?= $stocks["date_retirada"]?></td>
               <td scope="row"><?= $stocks["time_retirada"]?></td>
               <td class="actions">
