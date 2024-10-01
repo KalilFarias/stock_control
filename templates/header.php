@@ -50,8 +50,7 @@
                       Olá <?php echo $_SESSION['user_name'] ?> <!-- Mostra o nome do usuário -->
                   </a>
                   <ul class="dropdown-menu col-sm-auto navbar-dropdown"> <!-- Menu com opções, que abre quando clica non nome do usuário -->
-                      <li><a class="dropdown-item navbar-content" href="lista-pedidos.php">Meus pedidos</a></li>
-                      <li><a class="dropdown-item navbar-content" href="cadastro.php">Editar Cadastro</a></li>
+                      <li><a class="dropdown-item navbar-content" href="cadastro.php">Alterar senha</a></li>
                       <li>
                           <hr class="dropdown-divider">
                       </li>

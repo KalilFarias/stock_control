@@ -1,5 +1,8 @@
 <?php
   include_once("templates/header.php");
+  if (!isset($_COOKIE['token_sessao'])) {
+    header("Location: index.php");
+  }
 ?>
   <div class="container">
     <?php include_once("templates/backbtn.html"); ?>
