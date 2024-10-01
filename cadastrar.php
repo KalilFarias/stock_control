@@ -24,10 +24,12 @@
         <hr>
         <input type="password" class="form-control" id="senha" name="senha" placeholder="Confirme a senha" required>
       </div>
-      <div class="form-group">
-        <label for="observation">Observações:</label>
-        <textarea type="text" class="form-control" id="observation" name="observation" placeholder="Insira as observações" rows="3"></textarea>
+      <div class="container form-group">
+        <div class="row justify-content-evenly">
+            <button type="reset" class="col-3 btn btn-danger">Limpar dados</button>
+            <button type="submit" class="col-3 btn btn-success">Concluir</button>
+
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Concluir</button>
     </form>
   </div>
