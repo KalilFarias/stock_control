@@ -16,22 +16,22 @@
       $name = $data["name"];
       $tool = $data["tool"];
       $observation = $data["observation"];
-      $date = $data["date"];
-      $time = $data["time"];
+      $date_retirada = $data["date_retirada"];
+      $time_retirada = $data["time_retirada"];
 
-      $query = "INSERT INTO stocks (name, tool, observation, date, time) VALUES (:name, :tool, :observation, :date, :time)";
+      $query = "INSERT INTO stocks (name, tool, observation, date_retirada, time_retirada) VALUES (:name, :tool, :observation, :date_retirada, :time_retirada)";
 
       $stmt = $conn->prepare($query);
       $stmt->bindParam(":name", $name);
       $stmt->bindParam(":tool", $tool);
       $stmt->bindParam(":observation", $observation);
-      $stmt->bindParam(param: ":date", var: $date);
-      $stmt->bindParam(param: ":time", var: $time);
+      $stmt->bindParam(param: ":date_retirada", var: $date_retirada);
+      $stmt->bindParam(param: ":time_retirada", var: $time_retirada);
 
       try {
 
         $stmt->execute();
-        $_SESSION["msg"] = "Contato criado com sucesso!";
+        $_SESSION["msg"] = "Solicitação concluída com sucesso com sucesso!";
     
       } catch(PDOException $e) {
         // erro na conexão
@@ -122,7 +122,7 @@
                 $registrar_token->execute();
                 
                 #Armazenar o token de sessão como um cookie
-                setcookie('token_sessao',$token_sessao, time() + 3600,"/");
+                setcookie('token_sessao',$token_sessao, time() + 3600, 'tataru-cafe');
                 $_SESSION['user_id'] = $cliente_login['id'];
                 $_SESSION['user_name'] = $cliente_login['nome'];
                 #echo 'Usuário logado';

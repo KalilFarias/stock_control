@@ -10,9 +10,9 @@
     <p class="bold">Ferramenta:</p>
     <p><?= $stock["tool"] ?></p>
     <p class="bold">Data:</p>
-    <p><?= $stock["date"] ?></p>
+    <p><?= $stock["date_retirada"] ?></p>
     <p class="bold">Horário:</p>
-    <p><?= $stock["time"] ?></p>
+    <p><?= $stock["time_retirada"] ?></p>
     <p class="bold">Observações:</p>
     <p><?= $stock["observation"] ?></p>
   </div>

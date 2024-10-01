@@ -1,8 +1,5 @@
 <?php
   include_once("templates/header.php");
-  if (!isset($_COOKIE['token_sessao'])) {
-    header("Location: index.php");
-  }
 ?>
   <div class="container">
     <?php include_once("templates/backbtn.html"); ?>
@@ -19,11 +16,11 @@
       </div>
       <div class="form-group">
         <label for="date">Data</label>
-        <input type="date" class="form-control" id="date" name="date" value="<?php echo date('d-m-y');?>"  required>
+        <input type="date" class="form-control" id="date" name="date" value="<?php echo date('d-m-y');?>"required>
       </div>
       <div class="form-group">
-        <label for="time">Horário da solicitação</label>
-        <input type="time" class="form-control" id="time" name="time" value="<?php echo date('H:i'); ?>" required>
+        <label for="time_retirada">Horário da solicitação</label>
+        <input type="time_retirada" class="form-control" id="time_retirada" name="time_retirada" value="<?php echo date('H:i'); ?>" required>
       </div>
       <div class="form-group">
         <label for="observation">Observações:</label>
