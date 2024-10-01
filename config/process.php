@@ -94,7 +94,7 @@
       $email = $data["email"];
       $senha = $data["senha"];
 
-      $query = "SELECT id, nome, email, senha FROM usuarios WHERE email = '$email'";
+      $query = "SELECT id, nome, email, senha, is_admin FROM usuarios WHERE email = '$email'";
       $cliente_login = $conn->prepare($query);
 
       try {
@@ -145,6 +145,36 @@
                 </div>
             <?php
         }
+
+    } else if($data["type"] === "cadastrar-usuario") {
+      $name = $data["nome"];
+      $email = $data["email"];
+      $senha = $data["senha"];
+      $confirma_senha = $data["confirma-senha"];
+
+      if ($senha != $confirma_senha) {
+        $_SESSION['msg'] = "As senhas não são iguais";
+      } else {
+        $senha = password_hash($senha,PASSWORD_DEFAULT);
+        $query = "INSERT INTO usuarios (id, nome, email, senha, is_admin, apagado) VALUES (NULL, :nome, :email, :senha, 0, 0)";
+        $stmt = $conn->prepare($query);
+        
+        $stmt->bindParam(":nome", $name);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":senha", $senha);
+  
+        try {
+  
+          $stmt->execute();
+          $_SESSION["msg"] = "Usuário Cadastrado com sucesso";
+      
+        } catch(PDOException $e) {
+          // erro na conexão
+          $error = $e->getMessage();
+          echo "Erro: $error";
+        }
+
+      }
 
     }
 
