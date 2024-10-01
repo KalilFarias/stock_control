@@ -15,7 +15,7 @@
         <input type="text" class="form-control" id="tool" name="tool" placeholder="Digite o telefone" required>
       </div>
       <div class="form-group">
-        <label for="date">Data</label>
+        <label for="date">Data da solicitação</label>
         <input type="date" class="form-control" id="date" name="date" value="<?php echo date('d-m-y');?>"required>
       </div>
       <div class="form-group">
