@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/09/2024 às 16:05
+-- Tempo de geração: 01/10/2024 às 14:35
 -- Versão do servidor: 10.4.27-MariaDB
 -- Versão do PHP: 8.0.25
 
@@ -34,13 +34,6 @@ CREATE TABLE `sessoes` (
   `data_criacao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `sessoes`
---
-
-INSERT INTO `sessoes` (`id`, `usuario_id`, `token`, `data_criacao`) VALUES
-(80, 22, '702f9dc5295f365850c505e98fee5c4f2465648611fcc97853d624aedc16cd7d', '2024-09-30 14:00:16');
-
 -- --------------------------------------------------------
 
 --
@@ -49,17 +42,23 @@ INSERT INTO `sessoes` (`id`, `usuario_id`, `token`, `data_criacao`) VALUES
 
 CREATE TABLE `stocks` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(150) DEFAULT NULL,
-  `tool` varchar(20) DEFAULT NULL,
-  `observation` text DEFAULT NULL
+  `name` varchar(150) NOT NULL,
+  `tool` varchar(20) NOT NULL,
+  `observation` text DEFAULT NULL,
+  `date-retirada` date NOT NULL,
+  `time-retirada` time NOT NULL,
+  `date-devolucao` date DEFAULT NULL,
+  `time-devolucao` time DEFAULT NULL,
+  `devolvido` tinyint(1) NOT NULL,
+  `apagado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `stocks`
 --
 
-INSERT INTO `stocks` (`id`, `name`, `tool`, `observation`) VALUES
-(6, 'Teste', 'Chave de Fenda', 'Conservado');
+INSERT INTO `stocks` (`id`, `name`, `tool`, `observation`, `date-retirada`, `time-retirada`, `date-devolucao`, `time-devolucao`, `devolvido`, `apagado`) VALUES
+(6, 'Teste', 'Chave de Fenda', 'Conservado', '2024-10-01', '11:19:01', NULL, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -81,7 +80,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `is_admin`, `apagado`) VALUES
-(22, 'Luis', 'luis@dominio.com', '$2y$10$1W4FCM4brOdbTmpyYwf3puxN9wBo2RD3UFI/xoWFQ0zS60es.CGya', 1, 0);
+(22, 'Administrador', 'admin@dominio.com', '$2y$10$1W4FCM4brOdbTmpyYwf3puxN9wBo2RD3UFI/xoWFQ0zS60es.CGya', 1, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -115,7 +114,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `sessoes`
 --
 ALTER TABLE `sessoes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT de tabela `stocks`
