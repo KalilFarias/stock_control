@@ -7,7 +7,7 @@
 ?>
 <div class="container">
     <?php include_once("templates/backbtn.html"); ?>
-    <h1 id="main-title">Cadastrar usuário <?php echo $_SESSION['is_admin'] ?></h1>
+    <h1 id="main-title">Cadastrar usuário</h1>
     <form id="create-form" action="<?= $BASE_URL ?>config/process.php" method="POST">
       <input type="hidden" name="type" value="cadastrar-usuario">
       <div class="form-group">

@@ -2,6 +2,7 @@
 
   include_once("config/url.php");
   include_once("config/process.php");
+  include_once("config/auth.php");
 
   // limpa a mensagem
   if(isset($_SESSION['msg'])) {
@@ -36,7 +37,7 @@
             <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
           <?php }?>
           <!-- Botão Meu Cadastro (colapsable) -->
-          <?php if (!isset($_COOKIE['token_sessao'])) { ?>
+          <?php if (!isset($_SESSION['user_name'])) { ?>
 
           <!-- Mostrar botão de Login se o usuário não estiver logado -->
               <li class="nav-item col-sm-auto">
