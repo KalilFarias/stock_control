@@ -51,10 +51,11 @@
                       Olá <?php echo $_SESSION['user_name'] ?> <!-- Mostra o nome do usuário -->
                   </a>
                   <ul class="dropdown-menu col-sm-auto navbar-dropdown"> <!-- Menu com opções, que abre quando clica non nome do usuário -->
-                      <li><a class="dropdown-item navbar-content" href="cadastro.php">Alterar senha</a></li>
+                      <li><a class="dropdown-item navbar-content" href="alterar_senha.php">Alterar senha</a></li>
                       <!-- Opção de cadastrar usuário estará disponível só para o admin-->
                       <?php if($_SESSION['is_admin'] == 1) {?>
                         <li><a class="dropdown-item navbar-content" href="cadastrar.php">Cadastrar Usuário</a></li>
+                        <li><a class="dropdown-item navbar-content" href="reset_senha.php">Resetar Senha</a></li>
                         <?php }?>
                       <li>
                           <hr class="dropdown-divider">

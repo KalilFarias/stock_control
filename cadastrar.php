@@ -1,7 +1,7 @@
 <?php
   include_once("templates/header.php");
 
-  if (!isset($_COOKIE['token_sessao']) or $_SESSION['is_admin'] != 1) {
+  if ($_SESSION['is_admin'] != 1) {
     header("Location: index.php");
   }
 ?>
@@ -32,4 +32,7 @@
         </div>
       </div>
     </form>
-  </div>
+</div>
+<?php
+  include_once("templates/footer.php");
+?>
