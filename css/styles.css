@@ -41,7 +41,8 @@
   color: #007BFF;
 }
 
-.delete-form {
+.icon-green {
+  color: rgb(50, 241, 50); 
   display: inline-block;
 }
 

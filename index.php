@@ -31,7 +31,7 @@
                   <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
                     <input type="hidden" name="type" value="delete">
                     <input type="hidden" name="id" value="<?= $stocks["id"] ?>">
-                    <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
+                    <button type="submit" class="check-btn"><i class="bi bi-check-circle-fill icon-green"></i></button>
                   </form>
                   <?php }?>
               </td>

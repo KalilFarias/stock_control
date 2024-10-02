@@ -70,9 +70,9 @@
 
     } else if($data["type"] === "delete") {
 
-      $id = $data["id"];
+      $query = "UPDATE  stocks set devolvido = 1 WHERE id=:id";
 
-      $query = "DELETE FROM stocks WHERE id = :id";
+      $id = $data["id"];
 
       $stmt = $conn->prepare($query);
 
@@ -178,7 +178,7 @@
       // Retorna todos os contatos
       $stock = [];
 
-      $query = "SELECT * FROM stocks";
+      $query = "SELECT * FROM stocks WHERE devolvido = 0";
 
       $stmt = $conn->prepare($query);
 
