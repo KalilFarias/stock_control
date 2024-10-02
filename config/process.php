@@ -165,7 +165,7 @@
         try {
   
           $busca_usuario->execute();
-          $busca_usuario->fetch(PDO::FETCH_ASSOC);
+          $busca_usuario = $busca_usuario->fetch(PDO::FETCH_ASSOC);
       
         } catch(PDOException $e) {
           // erro na conexão

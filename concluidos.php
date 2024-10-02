@@ -2,6 +2,15 @@
 
 include_once("templates/header.php");
 
+$stock = [];
+
+$query = "SELECT * FROM stocks WHERE devolvido = 1";
+
+$stmt = $conn->prepare($query);
+
+$stmt->execute();
+
+$stock = $stmt->fetchAll();
 
 
 ?>
