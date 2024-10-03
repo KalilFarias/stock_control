@@ -48,3 +48,4 @@ $stock = $stmt->fetchAll();
 <?php
 include_once("templates/footer.php");
 ?>
+<script src="js/formata_data.js" defer></script>
