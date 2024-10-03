@@ -12,7 +12,11 @@
       </div>
       <div class="form-group">
         <label for="tool">Ferramenta solicitada:</label>
-        <input type="text" class="form-control" id="tool" name="tool" placeholder="Digite o telefone" required>
+        <input type="text" class="form-control" id="tool" name="tool" placeholder="Digite o nome da ferramenta" required>
+      </div>
+      <div class="form-group">
+        <label for="patrimonio">Numero do patrimonio:</label>
+        <input type="number" class="form-control" id="patrimonio" name="patrimonio" placeholder="Digite o numero do patrimonio" required>
       </div>
       <div class="form-group">
         <label for="date">Data da solicitação</label>

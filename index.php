@@ -12,6 +12,7 @@
           <tr>
             <th scope="col">Nome</th>
             <th scope="col">Ferramenta Solicitada</th>
+            <th scope="col">Numero do patrimonio</th>
             <th scope="col">Data</th>
             <th scope="col">Horário da solicitação</th>
             <th scope="col"></th>
@@ -22,6 +23,7 @@
             <tr>
               <td scope="row"><?= $stocks["name"] ?></td>
               <td scope="row"><?= $stocks["tool"] ?></td>
+              <td scope="row"><?= $stocks["patrimonio"] ?></td>
               <td scope="row"><?= $stocks["date_retirada"]?></td>
               <td scope="row"><?= $stocks["time_retirada"]?></td>
               <td class="actions">

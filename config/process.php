@@ -15,14 +15,16 @@
 
       $name = $data["name"];
       $tool = $data["tool"];
+      $patrimonio = $data["patrimonio"];
       $observation = $data["observation"];
       $date_retirada = $data["date_retirada"];
       $time_retirada = $data["time_retirada"];
 
-      $query = "INSERT INTO stocks (name, tool, observation, date_retirada, time_retirada) VALUES (:name, :tool, :observation, :date_retirada, :time_retirada)";
+      $query = "INSERT INTO stocks (name, tool, patrimonio, observation, date_retirada, time_retirada) VALUES (:name, :tool,:patrimonio, :observation, :date_retirada, :time_retirada)";
 
       $stmt = $conn->prepare($query);
       $stmt->bindParam(":name", $name);
+      $stmt->bindParam(":patrimonio", $patrimonio);
       $stmt->bindParam(":tool", $tool);
       $stmt->bindParam(":observation", $observation);
       $stmt->bindParam(param: ":date_retirada", var: $date_retirada);
@@ -43,17 +45,19 @@
 
       $name = $data["name"];
       $tool = $data["tool"];
+      $patrimonio = $data["patrimonio"];
       $observation = $data["observation"];
       $id = $data["id"];
 
       $query = "UPDATE stocks 
-                SET name = :name, tool = :tool, observation = :observation 
+                SET name = :name, tool = :tool, patrimonio=:patrimonio, observation = :observation
                 WHERE id = :id";
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":name", $name);
       $stmt->bindParam(":tool", $tool);
+      $stmt->bindParam(":patrimonio", $patrimonio);
       $stmt->bindParam(":observation", $observation);
       $stmt->bindParam(":id", $id);
 
