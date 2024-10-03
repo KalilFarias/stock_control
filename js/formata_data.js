@@ -15,8 +15,8 @@ function formatDate(inputDate) {
 // Função para formatar as datas na tabela
 function formatTableDates() {
     const dateCells = [
-        ...document.querySelectorAll('#stock-table tbody td:nth-child(3)'),
-        ...document.querySelectorAll('#stock-table tbody td:nth-child(5)')
+        ...document.querySelectorAll('#stock-table tbody td:nth-child(4)'),
+        ...document.querySelectorAll('#stock-table tbody td:nth-child(6)')
     ];
 
     dateCells.forEach(cell => {

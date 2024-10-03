@@ -9,6 +9,8 @@
     <p><?= $stock["name"] ?></p>
     <p class="bold">Ferramenta:</p>
     <p><?= $stock["tool"] ?></p>
+    <p class="bold">Numero do patrimonio:</p>
+    <p><?= $stock["patrimonio"] ?></p>
     <p class="bold">Data:</p>
     <p><?= $stock["date_retirada"] ?></p>
     <p class="bold">Horário:</p>
