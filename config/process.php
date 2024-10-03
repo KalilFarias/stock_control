@@ -70,14 +70,14 @@
 
     } else if($data["type"] === "delete") {
 
-      $query = "UPDATE  stocks set devolvido = 1 WHERE id=:id";
+      $query = "UPDATE stocks SET devolvido = 1, date_devolucao = CURRENT_DATE, time_devolucao = CURRENT_TIME WHERE id = :id";
 
       $id = $data["id"];
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":id", $id);
-      
+
       try {
 
         $stmt->execute();

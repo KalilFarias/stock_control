@@ -22,8 +22,10 @@ $stock = $stmt->fetchAll();
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">Ferramenta Solicitada</th>
-                    <th scope="col">Data</th>
+                    <th scope="col">Data da solicitação</th>
                     <th scope="col">Horário da solicitação</th>
+                    <th scope="col">Data de devolução</th>
+                    <th scope="col">Horário de devolução</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +35,8 @@ $stock = $stmt->fetchAll();
                         <td scope="row"><?= htmlspecialchars($stocks["tool"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["date_retirada"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["time_retirada"]) ?></td>
+                        <td scope="row"><?= htmlspecialchars($stocks["date_devolucao"]) ?></td>
+                        <td scope="row"><?= htmlspecialchars($stocks["time_devolucao"]) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
