@@ -41,7 +41,7 @@
             <a class="nav-link active" href="<?= $BASE_URL ?>concluidos.php">Concluidos</a>
           <?php }?>
           <!-- Botão Meu Cadastro (colapsable) -->
-          <?php if (!isset($_SESSION['user_name'])) { ?>
+          <?php if (!isset($_COOKIE['token_sessao'])) { ?>
 
           <!-- Mostrar botão de Login se o usuário não estiver logado -->
               <li class="nav-item col-sm-auto">

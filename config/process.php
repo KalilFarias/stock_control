@@ -119,14 +119,18 @@
                 
                 #Criar um token a partir de um HEX aleatório
                 $token_sessao = bin2hex(random_bytes(32));
+
+                #Definir a expiração do token (em segundos)
+                $tempo_validade_token = 3600;
+                $data_expiracao = date('Y-m-d H:i:s', time() + $tempo_validade_token);
                 
                 #Inserir o token no Banco
-                $sql = "INSERT INTO sessoes (id, usuario_id, token, data_criacao) VALUES (NULL, '$cliente_login[id]','$token_sessao',NOW())";
+                $sql = "INSERT INTO sessoes (id, usuario_id, token, data_criacao, data_expiracao) VALUES (NULL, '$cliente_login[id]','$token_sessao', NOW(), '$data_expiracao')";
                 $registrar_token = $conn->prepare($sql);
                 $registrar_token->execute();
                 
                 #Armazenar o token de sessão como um cookie
-                setcookie('token_sessao',$token_sessao, time() + 3600,  '/');
+                setcookie('token_sessao',$token_sessao, time() + $tempo_validade_token,  '/');
                 $_SESSION['user_id'] = $cliente_login['id'];
                 $_SESSION['user_name'] = $cliente_login['nome'];
                 $_SESSION['is_admin'] = $cliente_login['is_admin'];

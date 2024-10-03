@@ -1,18 +1,18 @@
 <?php
 include_once ('connection.php');
 
-// Verifica se a sessão do usuário está inativa
-if (!isset($_SESSION['user_id'])) {
-    
-    // Verifica se o cookie de autenticação existe
-    if (isset($_COOKIE['token_sessao'])) {
+// Verifica se o cookie de autenticação existe
+if (isset($_COOKIE['token_sessao'])) {
+
+    // Verifica se a sessão do usuário está inativa
+    if (!isset($_SESSION['user_id'])) {
         
         // Busca o usuário pelo token no banco de dados
         $sql_user_logado = 
             "SELECT usuarios.id, usuarios.nome, usuarios.is_admin, sessoes.token 
             FROM usuarios
             JOIN sessoes ON usuarios.id = sessoes.usuario_id
-            WHERE sessoes.token = :auth_token";
+            WHERE sessoes.token = :auth_token AND sessoes.data_expiracao > NOW()";
 
         //$stmt_user_logado = $conn->prepare($sql_user_logado);
         $stmt_user_logado = $conn->prepare($sql_user_logado);
@@ -43,7 +43,10 @@ if (!isset($_SESSION['user_id'])) {
         }
 
     } else {
-        // Se não houver sessão e nenhum cookie, redireciona para a página de login
+        session_destroy();
     }
+} else {
+    session_destroy();
+    $_SESSION = [];
 }
 ?>
