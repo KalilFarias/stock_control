@@ -374,4 +374,3 @@
 
   // FECHAR CONEXÃO
   $con = null;
-  #TESTESTESTE
