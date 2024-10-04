@@ -372,5 +372,5 @@
 
   }
 
-  // FECHAR CONEXÃO
+  // FECHAR CONEXÃOO
   $con = null;
