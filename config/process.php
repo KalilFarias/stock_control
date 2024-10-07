@@ -72,6 +72,8 @@
         echo "Erro: $error";
       }
 
+      //delete
+
     } else if($data["type"] === "delete") {
 
       $query = "UPDATE stocks SET devolvido = 1, date_devolucao = CURRENT_DATE, time_devolucao = CURRENT_TIME WHERE id = :id";
