@@ -16,7 +16,6 @@
 #stock-table thead {
   color: #FFF;
   background-color: #007BFF;
-  width: 30px !important; 
 }
 
 .col-id {
@@ -84,8 +83,82 @@
 #back-link-container {
   display: block;
   width: 500px;
-  margin: 30px auto 0;
+  margin: 100px auto 0;
 }
+
+/* Estilos para a Navbar */
+.navbar {
+  background-color: #0056b3 !important; /* Azul mais escuro para o fundo */
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1); /* Sombra para a navbar */
+  height: 80pxpx;
+}
+
+.navbar-brand img {
+  width: 60px;
+  height: 60px; /* Ajusta a altura do logo */
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.nav-link {
+  color: #f8f9fa !important; /* Cor clara para os links */
+  font-size: 1.1rem; /* Aumenta um pouco o tamanho da fonte */
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #FFD700 !important; /* Cor dourada ao passar o mouse */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra suave nos links ao hover */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #0056b3; /* Cor do menu dropdown */
+  border: none;
+}
+
+.dropdown-menu .dropdown-header {
+  color: #fff;
+  background-color: #004a9f; /* Cor mais escura no cabeçalho do dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #f8f9fa;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #003b82; /* Fundo mais escuro ao passar o mouse no dropdown */
+}
+
+/* Estilos para o botão de login */
+.navbar-content {
+  font-size: 1.1rem;
+  color: #f8f9fa !important;
+}
+
+.navbar-content:hover {
+  color: #FFD700 !important; /* Dourado ao passar o mouse */
+}
+
+.navbar-toggler {
+  border-color: #fff; /* Altera a cor da borda do botão mobile */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Alterando a cor do ícone da navbar mobile */
+}
+
+/* Responsividade para o cabeçalho */
+@media (max-width: 992px) {
+  .navbar-brand img {
+    height: 35px; /* Ajusta o tamanho do logo em telas menores */
+  }
+
+  .navbar-nav {
+    text-align: center; /* Centraliza os itens em dispositivos menores */
+  }
+}
+
 
 #back-link {
   border: 1px solid #007BFF;
