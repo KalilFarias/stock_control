@@ -1,3 +1,31 @@
+:root{
+  --cor-de-fundo: lightgray;/*
+      --cor-de-fundo-escura: #583b26;
+      --cor-de-fundo-clara: #583b26b4;*/
+
+  --cor-secundaria: #A67B5B;
+
+  --cor-terciaria: #0056b3;/*
+      --cor-terciaria-clara: rgba(236, 177, 118, 0.623);
+          --cor-terciaria-clara-escura: rgba(236, 177, 118, 0.767);
+      --cor-terciaria-clarissima: rgba(236, 177, 118, 0.247);*/
+
+  --cor-da-fonte: #000000;/*
+      --cor-da-fonte-rgb: rgb(254, 216, 177);
+      --cor-da-fonte-clara: rgba(254, 216, 177, 0.712);*/
+
+  --cor-border: #0056b3;
+
+  --cor-btn-bg: #149c32;
+    --cor-btn-bg-hover:#0f6e23;
+    --cor-btn-border: #00000000;
+    --cor-btn-fonte: #ffffff;
+}
+
+body {
+  background-color: lightgray;
+}
+
 .navbar-brand img {
   width: 50px;
 }
@@ -54,6 +82,38 @@
 
 .delete-icon {
   color: #BD2130;
+}
+
+.form-custom {
+  color: #000000;
+  background-color: var(--cor-terciaria);
+  border: 1px, solid, var(--cor-border);
+  border-radius: 0.5rem;
+}
+
+.form-field-custom {
+  background-color: var(--cor-de-fundo);
+  color: var(--cor-da-fonte) !important;
+  border: 1px, solid, var(--cor-border);
+  --bs-body-color:var(--cor-da-fonte);
+  --bs-body-bg:var(--cor-de-fundo);
+}
+
+.form-label-custom {
+  --bs-body-bg:var(--cor-de-fundo);
+  --bs-body-color:var(--cor-da-fonte);
+  --bs-body-color-rgb:var(--cor-da-fonte-rgb);
+  --bs-highlight-bg:var(--cor-de-fundo);
+}
+
+.btn-primary {
+  background-color: var(--cor-btn-bg);
+  border-color: var(--cor-btn-border);
+  color: var(--cor-btn-fonte);
+  --bs-btn-hover-color: var(--cor-btn-fonte);
+  --bs-btn-hover-bg: var(--cor-btn-bg-hover);
+  --bs-btn-hover-border-color: var(--cor-btn-border);
+
 }
 
 #empty-list-text {
