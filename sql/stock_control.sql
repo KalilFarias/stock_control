@@ -17,6 +17,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+CREATE DATABASE IF NOT EXISTS `stock_control` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `stock_control`;
+
 --
 -- Banco de dados: `stock_control`
 --

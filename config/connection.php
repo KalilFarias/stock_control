@@ -1,9 +1,9 @@
 <?php
 
-  $host = "localhost";
+  $host = "db";
   $dbname = "stock_control";
   $user = "root";
-  $pass = "";
+  $pass = "root";
 
   try {
 
