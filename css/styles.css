@@ -169,7 +169,7 @@ body {
   color: var(--cor-btn-fonte);
 }
 
-.btn-primary:hover {
+.btn-success:hover {
   background-color: var(--cor-btn-bg-hover);
   border-color: var(--cor-btn-border);
 }
