@@ -43,7 +43,7 @@ body {
 
 #stock-table thead {
   color: #FFF;
-  background-color: #007BFF;
+  background-color: #007BFF !important  ;
 }
 
 .col-id {
@@ -318,6 +318,126 @@ body {
     height: 100%;
   }
 }
+
+/* Estilo geral */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Estilo do container principal */
+.container {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título principal */
+#main-title {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Mensagem de sucesso ou erro */
+#msg {
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Estilo para a tabela */
+.table {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.table th {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Estilo para os ícones de ação */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions a, .actions button {
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
+.actions a {
+  color: #007bff;
+}
+
+.actions .edit-icon {
+  color: #ffc107;
+}
+
+.actions .check-icon {
+  color: #28a745;
+}
+
+.actions .check-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.actions .icon-green {
+  color: #28a745;
+}
+
+/* Estilo para o texto quando a lista estiver vazia */
+#empty-list-text {
+  text-align: center;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+#empty-list-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#empty-list-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .table th, .table td {
+    font-size: 0.9rem;
+  }
+
+  #main-title {
+    font-size: 1.5rem;
+  }
+}
+
 
 
 
