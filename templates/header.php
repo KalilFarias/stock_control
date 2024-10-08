@@ -27,7 +27,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="<?= $BASE_URL ?>index.php">
         <img src="<?= $BASE_URL ?>img/logo.png" alt="Agenda" >
       </a>
