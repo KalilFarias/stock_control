@@ -146,6 +146,7 @@ body {
 .dropdown-menu {
   background-color: var(--cor-terciaria);
   border: none;
+  --bs-dropdown-link-hover-color: #FFD700;
 }
 
 .dropdown-header {
