@@ -38,7 +38,7 @@
       } catch(PDOException $e) {
         // erro na conexão
         $error = $e->getMessage();
-        echo "Erro: $error";
+        //echo "Erro: $error";
       }
 
     } else if($data["type"] === "edit") {
@@ -333,7 +333,7 @@
     }
 
     // Redirect HOME
-    header("Location:" . $BASE_URL . "../index.php");
+    header("Location: /index.php");
 
   // SELEÇÃO DE DADOS
   } else {

@@ -18,7 +18,7 @@
             </div>
         
             <div class="col-md-10 mx-auto col-lg-7">
-                <form class="p-4 p-md-5 rounded-3 form-custom" action="<?= $BASE_URL ?>config/process.php" method="POST">
+                <form class="p-4 p-md-5 rounded-3 form-custom" action="config/process.php" method="POST">
                     <input type="hidden" name="type" value="login">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control form-field-custom" id="email-input" name="email" placeholder="seuemail@dominio.com.br">

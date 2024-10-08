@@ -1,5 +1,5 @@
 # Use a imagem oficial do PHP com Apache
-FROM php:8.1-apache
+FROM php:8.0.25-apache
 
 # Habilita módulos necessários do Apache
 RUN apt-get update && apt-get install -y \

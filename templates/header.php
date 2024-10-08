@@ -1,6 +1,6 @@
 <?php
 
-  include_once("config/url.php");
+  //include_once("config/url.php");
   include_once("config/process.php");
   include_once("config/auth.php");
 
@@ -23,29 +23,29 @@
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- CSS -->
-  <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="<?= $BASE_URL ?>index.php">
-        <img src="<?= $BASE_URL ?>img/logo.png" alt="Agenda" >
+      <a class="navbar-brand" href="index.php">
+        <img src="img/logo.png" alt="Agenda" >
       </a>
       <div>
         <div class="navbar-nav">
-          <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Controle</a>
+          <a class="nav-link active" id="home-link" href="index.php">Controle</a>
           <?php if (isset($_COOKIE['token_sessao'])) {?>
-            <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar Pedido</a>
+            <a class="nav-link active" href="create.php">Adicionar Pedido</a>
           <?php }?>
           <?php if (isset($_COOKIE['token_sessao'])) {?>
-            <a class="nav-link active" href="<?= $BASE_URL ?>concluidos.php">Concluidos</a>
+            <a class="nav-link active" href="concluidos.php">Concluidos</a>
           <?php }?>
           <!-- Botão Meu Cadastro (colapsable) -->
           <?php if (!isset($_COOKIE['token_sessao'])) { ?>
 
           <!-- Mostrar botão de Login se o usuário não estiver logado -->
               <li class="nav-item col-sm-auto">
-                  <a class="nav-link navbar-content" aria-current="page" href="<?= $BASE_URL ?>login.php">Login</a>
+                  <a class="nav-link navbar-content" aria-current="page" href="login.php">Login</a>
               </li>
           <?php } else {?>
 
