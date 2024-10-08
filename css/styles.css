@@ -294,7 +294,7 @@ body {
   border-color: transparent;
   box-shadow: none;
   outline: none;
-}
+} 
 
 #create-form input:focus::before, #create-form textarea:focus::before {
   content: "";
