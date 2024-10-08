@@ -162,7 +162,7 @@ body {
 }
 
 /* Estilo do Botão */
-.btn-primary {
+.btn-success {
   background-color: var(--cor-btn-bg);
   border-color: var(--cor-btn-border);
   color: var(--cor-btn-fonte);

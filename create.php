@@ -30,7 +30,7 @@
         <label for="observation">Observações:</label>
         <textarea type="text" class="form-control" id="observation" name="observation" placeholder="Insira as observações" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Concluir</button>
+      <button type="submit" class="btn btn-success mt-4">Concluir</button>
     </form>
   </div>
 <?php
