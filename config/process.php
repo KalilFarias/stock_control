@@ -44,7 +44,7 @@
       } catch(PDOException $e) {
         // erro na conexão
         $error = $e->getMessage();
-        //echo "Erro: $error";
+        echo "Erro: $error";
       }
 
     } else if($data["type"] === "edit") {
@@ -147,15 +147,15 @@
 
             } else { #A senha não confere
                 #echo 'Senha incorreta';
-                $_SESSION["msg"] = "Senha não confere";
-                ?>
+                $_SESSION['msg'] = "Senha não confere";
+                /*?>
                 <div class="alert alert-danger col-7 mx-auto" role="alert">
                     Usuário ou senha incorretos
                 </div>
-            <?php }
+            <?php*/ }
         } else {
             #echo "Usuário não encontrado";
-            $_SESSION["msg"] = "Usuário não encontrado";
+            $_SESSION['msg'] = "Usuário não encontrado";
             ?>
                 <div class="alert alert-danger col-7 mx-auto" role="alert">
                     Usuário ou senha incorretos

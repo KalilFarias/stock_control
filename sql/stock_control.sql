@@ -86,8 +86,8 @@ CREATE TABLE `stocks` (
   `time_retirada` time NOT NULL,
   `date_devolucao` date DEFAULT NULL,
   `time_devolucao` time DEFAULT NULL,
-  `devolvido` tinyint(1) NOT NULL,
-  `apagado` tinyint(1) NOT NULL,
+  `devolvido` tinyint(1) NOT NULL DEFAULT 0,
+  `apagado` tinyint(1) NOT NULL DEFAULT 0,
   `patrimonio` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
