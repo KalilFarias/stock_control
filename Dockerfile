@@ -12,11 +12,18 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_mysql \
     && a2enmod rewrite
 
+# Cria o diretório de sessões e define as permissões
+RUN mkdir -p /var/lib/php/sessions && \
+    chown -R www-data:www-data /var/lib/php/sessions
+
 # Define o diretório de trabalho
 WORKDIR /var/www/html
 
 # Copia o projeto PHP para o diretório do servidor
 COPY . .
+
+# Copia o arquivo php.ini para o diretório de configuração do PHP
+COPY php.ini /usr/local/etc/php/
 
 # Define as permissões adequadas (opcional)
 RUN chown -R www-data:www-data /var/www/html

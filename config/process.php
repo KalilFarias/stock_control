@@ -1,6 +1,12 @@
 <?php
 
   session_start();
+  
+  /*if (!is_writable(session_save_path())) {
+    echo 'Session path "'.session_save_path().'" is not writable for PHP!'; 
+  } else {
+    echo 'Path: "' . session_save_path() . '" is writteable';
+  }*/
 
   include_once("connection.php");
   include_once("url.php");
@@ -137,6 +143,7 @@
                 $_SESSION['user_name'] = $cliente_login['nome'];
                 $_SESSION['is_admin'] = $cliente_login['is_admin'];
                 #echo 'Usuário logado';
+                //exit;
 
             } else { #A senha não confere
                 #echo 'Senha incorreta';

@@ -34,6 +34,7 @@ if (isset($_COOKIE['token_sessao'])) {
             } else {
                 // Se o token não for válido, destrói a sessão
                 session_destroy();
+                //$_SESSION['user_name'] = 'Else 1';
             }
 
         } catch(PDOException $e) {
@@ -43,10 +44,12 @@ if (isset($_COOKIE['token_sessao'])) {
         }
 
     } else {
-        session_destroy();
+        //session_destroy();
+        //$_SESSION['user_name'] = 'Else 2';
     }
 } else {
     session_destroy();
+    //$_SESSION['user_name'] = 'Else 3';
     $_SESSION = [];
 }
 ?>
