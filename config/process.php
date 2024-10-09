@@ -147,20 +147,11 @@
 
             } else { #A senha não confere
                 #echo 'Senha incorreta';
-                $_SESSION['msg'] = "Senha não confere";
-                /*?>
-                <div class="alert alert-danger col-7 mx-auto" role="alert">
-                    Usuário ou senha incorretos
-                </div>
-            <?php*/ }
+                $_SESSION["msg"] = "Senha não confere";
+              }
         } else {
             #echo "Usuário não encontrado";
-            $_SESSION['msg'] = "Usuário não encontrado";
-            ?>
-                <div class="alert alert-danger col-7 mx-auto" role="alert">
-                    Usuário ou senha incorretos
-                </div>
-            <?php
+            $_SESSION["msg"] = "Usuário não encontrado";
         }
 
       // Cadastrar Usuário

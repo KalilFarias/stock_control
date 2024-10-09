@@ -50,6 +50,6 @@ if (isset($_COOKIE['token_sessao'])) {
 } else {
     session_destroy();
     //$_SESSION['user_name'] = 'Else 3';
-    $_SESSION = [];
+    //$_SESSION = [];
 }
 ?>

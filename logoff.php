@@ -1,4 +1,8 @@
 <?php
+  if (!isset($_COOKIE['token_sessao'])) {
+    header("Location: index.php");
+    exit;
+  }
   include_once("config/connection.php");
   session_start();
   if(isset($_COOKIE['token_sessao']))  {
