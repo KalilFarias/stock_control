@@ -1,11 +1,7 @@
 <?php
-
-  if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
-  }
   
+  include_once("config/login_check.php");
   include_once("templates/header.php");
-
 
 ?>
   <div class="container">

@@ -1,8 +1,5 @@
 <?php
-  if (!isset($_COOKIE['token_sessao'])) {
-    header("Location: index.php");
-    exit;
-  }
+  include_once("config/login_check.php");
   include_once("templates/header.php");
 ?>
   <div class="container">
