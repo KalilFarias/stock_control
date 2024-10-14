@@ -354,6 +354,7 @@ else {
     $stmt->execute();
 
     $stock = $stmt->fetch();
+  }
   } else {
 
     // Retorna todos os contatos
@@ -371,7 +372,7 @@ else {
     $stock = $stmt->fetchAll();
   }
 }
-}
+
 
 // FECHAR CONEXÃO
 $con = null;
