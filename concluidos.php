@@ -30,7 +30,7 @@ if ($dateStart && $dateEnd) {
 
 // Prepara a consulta
 $stmt = $conn->prepare($query);
-echo $query;
+//echo $query;
 
 // Vincula os parâmetros de data se aplicável
 if ($dateStart) {
