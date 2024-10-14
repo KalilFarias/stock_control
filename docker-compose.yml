@@ -17,6 +17,7 @@ services:
       MYSQL_DATABASE: stock_control
       MYSQL_USER: usuario
       MYSQL_PASSWORD: senhadousuario
+      TZ: America/Sao_Paulo
     volumes:
       - db_data:/var/lib/mysql
       - ./sql/stock_control.sql:/docker-entrypoint-initdb.d/init.sql
