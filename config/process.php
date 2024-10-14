@@ -332,9 +332,9 @@ if (!empty($data)) {
 } 
 
 else {
-  $id;
   
-  if (!empty($_GET) && !empty($id)) {
+
+  if (!empty($_GET['id'])) {
     $id = $_GET["id"];
   }
   
@@ -353,8 +353,8 @@ else {
     $stmt->execute();
 
     $stock = $stmt->fetch();
-  
-  } else {
+  }
+   else {
 
     // Retorna todos os contatos
     $stock = [];
