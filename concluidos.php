@@ -13,23 +13,24 @@ $dateEnd = isset($_GET['date_end']) ? $_GET['date_end'] : null;
 $query = "SELECT s.*, u_criacao.nome AS nome_usuario_criacao, u_devolucao.nome AS nome_usuario_devolucao
     FROM stocks s
     JOIN usuarios u_criacao ON s.usuario_id_criacao = u_criacao.id
-    JOIN usuarios u_devolucao ON s.usuario_id_devolucao = u_devolucao.id; 
-    WHERE devolvido = 1";
+    JOIN usuarios u_devolucao ON s.usuario_id_devolucao = u_devolucao.id 
+    WHERE s.devolvido = 1";
 
 // Condições dinâmicas para filtro de datas
 if ($dateStart && $dateEnd) {
     // Se ambas as datas foram fornecidas
-    $query .= " AND date_retirada BETWEEN :date_start AND :date_end";
+    $query .= " AND s.date_retirada BETWEEN :date_start AND :date_end";
 } elseif ($dateStart) {
     // Se apenas a data de início foi fornecida
-    $query .= " AND date_retirada >= :date_start";
+    $query .= " AND s.date_retirada >= :date_start";
 } elseif ($dateEnd) {
     // Se apenas a data de término foi fornecida
-    $query .= " AND date_retirada <= :date_end";
+    $query .= " AND s.date_retirada <= :date_end";
 }
 
 // Prepara a consulta
 $stmt = $conn->prepare($query);
+echo $query;
 
 // Vincula os parâmetros de data se aplicável
 if ($dateStart) {
