@@ -16,7 +16,7 @@ function formatDate(inputDate) {
 function formatTableDates() {
     const dateCells = [
         ...document.querySelectorAll('#stock-table tbody td:nth-child(4)'),
-        ...document.querySelectorAll('#stock-table tbody td:nth-child(6)')
+        ...document.querySelectorAll('#stock-table tbody td:nth-child(7)')
     ];
 
     dateCells.forEach(cell => {

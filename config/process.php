@@ -26,7 +26,7 @@
       $date_retirada = $data["date_retirada"];
       $time_retirada = $data["time_retirada"];
 
-      $query = "INSERT INTO stocks (name, tool, patrimonio, observation, date_retirada, time_retirada) VALUES (:name, :tool,:patrimonio, :observation, :date_retirada, :time_retirada)";
+      $query = "INSERT INTO stocks (name, tool, patrimonio, observation, date_retirada, time_retirada, usuario_id_criacao) VALUES (:name, :tool,:patrimonio, :observation, :date_retirada, :time_retirada, :usuario_id_criacao)";
 
       $stmt = $conn->prepare($query);
       $stmt->bindParam(":name", $name);
@@ -35,6 +35,7 @@
       $stmt->bindParam(":observation", $observation);
       $stmt->bindParam(param: ":date_retirada", var: $date_retirada);
       $stmt->bindParam(param: ":time_retirada", var: $time_retirada);
+      $stmt->bindParam(param: ":usuario_id_criacao", var: $_SESSION['user_id']);
 
       try {
 
@@ -82,13 +83,19 @@
 
     } else if($data["type"] === "delete") {
 
-      $query = "UPDATE stocks SET devolvido = 1, date_devolucao = CURRENT_DATE, time_devolucao = CURRENT_TIME WHERE id = :id";
+      $query = "UPDATE stocks 
+        SET devolvido = 1, 
+          date_devolucao = CURRENT_DATE, 
+          time_devolucao = CURRENT_TIME, 
+          usuario_id_devolucao = :usuario_id_devolucao 
+        WHERE id = :id";
 
       $id = $data["id"];
 
       $stmt = $conn->prepare($query);
 
       $stmt->bindParam(":id", $id);
+      $stmt->bindParam(param: ":usuario_id_devolucao", var: $_SESSION['user_id']);
 
       try {
 
@@ -345,7 +352,10 @@
     // Retorna o dado de um contato
     if(!empty($id)) {
 
-      $query = "SELECT * FROM stocks WHERE id = :id";
+      $query = "SELECT s.*, u.nome 
+      FROM stocks s 
+      JOIN usuarios u ON s.usuario_id_criacao = u.id
+      WHERE s.id = :id";
 
       $stmt = $conn->prepare($query);
 
@@ -360,7 +370,10 @@
       // Retorna todos os contatos
       $stock = [];
 
-      $query = "SELECT * FROM stocks WHERE devolvido = 0";
+      $query = "SELECT s.*, u.nome AS nome_usuario
+      FROM stocks s
+      JOIN usuarios u ON s.usuario_id_criacao = u.id
+      WHERE devolvido = 0;";
 
       $stmt = $conn->prepare($query);
 

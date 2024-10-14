@@ -15,6 +15,7 @@
             <th scope="col">Numero do patrimonio</th>
             <th scope="col">Data</th>
             <th scope="col">Horário da solicitação</th>
+            <th scope="col">Usuario de Criação</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@
               <td scope="row"><?= $stocks["patrimonio"] ?></td>
               <td scope="row"><?= $stocks["date_retirada"]?></td>
               <td scope="row"><?= $stocks["time_retirada"]?></td>
+              <td scope="row"><?= $stocks["nome_usuario"]?></td>
               <td class="actions">
                 <a href="show.php?id=<?= $stocks["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
                 <?php if (isset($_COOKIE['token_sessao'])) {?>

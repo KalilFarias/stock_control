@@ -5,7 +5,11 @@
 
 $stock = [];
 
-$query = "SELECT * FROM stocks WHERE devolvido = 1";
+$query = "SELECT s.*, u_criacao.nome AS nome_usuario_criacao, u_devolucao.nome AS nome_usuario_devolucao
+    FROM stocks s
+    JOIN usuarios u_criacao ON s.usuario_id_criacao = u_criacao.id
+    JOIN usuarios u_devolucao ON s.usuario_id_devolucao = u_devolucao.id; 
+    WHERE devolvido = 1";
 
 $stmt = $conn->prepare($query);
 
@@ -26,8 +30,10 @@ $stock = $stmt->fetchAll();
                     <th scope="col">Numero do patrimonio</th>
                     <th scope="col">Data da solicitação</th>
                     <th scope="col">Horário da solicitação</th>
+                    <th scope="col">Usuario de criação</th>
                     <th scope="col">Data de devolução</th>
                     <th scope="col">Horário de devolução</th>
+                    <th scope="col">Usuario de devolução</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,8 +44,10 @@ $stock = $stmt->fetchAll();
                         <td scope="row"><?= htmlspecialchars($stocks["patrimonio"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["date_retirada"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["time_retirada"]) ?></td>
+                        <td scope="row"><?= htmlspecialchars($stocks["nome_usuario_criacao"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["date_devolucao"]) ?></td>
                         <td scope="row"><?= htmlspecialchars($stocks["time_devolucao"]) ?></td>
+                        <td scope="row"><?= htmlspecialchars($stocks["nome_usuario_devolucao"]) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
