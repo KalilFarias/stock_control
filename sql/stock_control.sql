@@ -88,35 +88,38 @@ CREATE TABLE `stocks` (
   `time_devolucao` time DEFAULT NULL,
   `devolvido` tinyint(1) NOT NULL DEFAULT 0,
   `apagado` tinyint(1) NOT NULL DEFAULT 0,
-  `patrimonio` int(11) DEFAULT NULL
+  `patrimonio` int(11) DEFAULT NULL,
+  `usuario_id_criacao` bigint(20) UNSIGNED NOT NULL,
+  `usuario_id_devolucao` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `stocks`
 --
 
-INSERT INTO `stocks` (`id`, `name`, `tool`, `observation`, `date_retirada`, `time_retirada`, `date_devolucao`, `time_devolucao`, `devolvido`, `apagado`, `patrimonio`) VALUES
-(1, 'Alice', 'Chave de Fenda', 'Retirada para manutenção', '2024-09-10', '08:30:00', '2024-10-03', '10:31:27', 1, 0, NULL),
-(2, 'Bruno', 'Alicate', 'Uso em projeto', '2024-09-12', '09:00:00', '2024-09-15', '17:00:00', 1, 0, NULL),
-(3, 'Carla', 'Martelo', 'Trabalho de carpintaria', '2024-09-13', '10:00:00', '2024-10-03', '10:33:21', 1, 0, NULL),
-(4, 'Daniel', 'Serra', 'Corte de madeira', '2024-09-14', '11:30:00', '2024-09-16', '15:00:00', 1, 0, NULL),
-(5, 'Eduardo', 'Furadeira', 'Furações em parede', '2024-09-15', '14:00:00', '2024-10-03', '10:33:59', 1, 0, NULL),
-(6, 'Fernanda', 'Chave Allen', 'Montagem de móveis', '2024-09-16', '08:45:00', '2024-09-20', '09:15:00', 1, 0, NULL),
-(7, 'Gustavo', 'Esmerilhadeira', 'Polimento de peças', '2024-09-17', '13:00:00', NULL, NULL, 0, 0, NULL),
-(8, 'Helena', 'Parafusadeira', 'Instalação de prateleiras', '2024-09-18', '09:30:00', '2024-09-19', '12:00:00', 1, 0, NULL),
-(9, 'Igor', 'Lixadeira', 'Acabamento de madeira', '2024-09-19', '10:15:00', NULL, NULL, 0, 0, NULL),
-(10, 'Juliana', 'Sierra circular', 'Corte em lâminas', '2024-09-20', '11:00:00', NULL, NULL, 0, 0, NULL),
-(11, 'Leonardo', 'Multímetro', 'Teste de circuitos', '2024-09-21', '14:30:00', '2024-09-25', '10:00:00', 1, 0, NULL),
-(12, 'Mariana', 'Pistola de cola', 'Colagem de peças', '2024-09-22', '16:00:00', NULL, NULL, 0, 0, NULL),
-(13, 'Nuno', 'Bomba de vácuo', 'Experimento de laboratório', '2024-09-23', '09:15:00', '2024-09-24', '13:00:00', 1, 0, NULL),
-(14, 'Olga', 'Chave de Grifo', 'Ajustes em tubulações', '2024-09-24', '11:45:00', NULL, NULL, 0, 0, NULL),
-(15, 'Paulo', 'Balança', 'Pesagem de materiais', '2024-09-25', '08:00:00', NULL, NULL, 0, 0, NULL),
-(16, 'Quiteria', 'Metrônomo', 'Ajuste de instrumentos', '2024-09-26', '10:00:00', '2024-09-27', '16:00:00', 1, 0, NULL),
-(17, 'Rafael', 'Ferro de solda', 'Trabalho de eletrônica', '2024-09-27', '12:30:00', NULL, NULL, 0, 0, NULL),
-(18, 'Sofia', 'Compasso', 'Desenhos técnicos', '2024-09-28', '09:00:00', '2024-09-29', '14:00:00', 1, 0, NULL),
-(19, 'Thiago', 'Trena', 'Medições de área', '2024-09-29', '15:00:00', NULL, NULL, 0, 0, NULL),
-(20, 'Ursula', 'Pá', 'Jardinagem', '2024-09-30', '10:00:00', '2024-10-03', '13:47:58', 1, 0, NULL),
-(21, 'Teste', 'Testador', 'Observado', '2024-10-03', '13:48:00', '2024-10-03', '13:48:52', 1, 0, 123456);
+INSERT INTO `stocks` (`id`, `name`, `tool`, `observation`, `date_retirada`, `time_retirada`, `date_devolucao`, `time_devolucao`, `devolvido`, `apagado`, `patrimonio`, `usuario_id_criacao`, `usuario_id_devolucao`) VALUES
+(1, 'Alice', 'Chave de Fenda', 'Retirada para manutenção', '2024-09-10', '08:30:00', '2024-10-03', '10:31:27', 1, 0, NULL, 22, 25),
+(2, 'Bruno', 'Alicate', 'Uso em projeto', '2024-09-12', '09:00:00', '2024-09-15', '17:00:00', 1, 0, NULL, 22, 25),
+(3, 'Carla', 'Martelo', 'Trabalho de carpintaria', '2024-09-13', '10:00:00', '2024-10-03', '10:33:21', 1, 0, NULL, 22, 25),
+(4, 'Daniel', 'Serra', 'Corte de madeira', '2024-09-14', '11:30:00', '2024-09-16', '15:00:00', 1, 0, NULL, 22, 25),
+(5, 'Eduardo', 'Furadeira', 'Furações em parede', '2024-09-15', '14:00:00', '2024-10-03', '10:33:59', 1, 0, NULL, 22, 25),
+(6, 'Fernanda', 'Chave Allen', 'Montagem de móveis', '2024-09-16', '08:45:00', '2024-09-20', '09:15:00', 1, 0, NULL, 22, 25),
+(7, 'Gustavo', 'Esmerilhadeira', 'Polimento de peças', '2024-09-17', '13:00:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(8, 'Helena', 'Parafusadeira', 'Instalação de prateleiras', '2024-09-18', '09:30:00', '2024-09-19', '12:00:00', 1, 0, NULL, 22, 25),
+(9, 'Igor', 'Lixadeira', 'Acabamento de madeira', '2024-09-19', '10:15:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(10, 'Juliana', 'Sierra circular', 'Corte em lâminas', '2024-09-20', '11:00:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(11, 'Leonardo', 'Multímetro', 'Teste de circuitos', '2024-09-21', '14:30:00', '2024-09-25', '10:00:00', 1, 0, NULL, 22, 25),
+(12, 'Mariana', 'Pistola de cola', 'Colagem de peças', '2024-09-22', '16:00:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(13, 'Nuno', 'Bomba de vácuo', 'Experimento de laboratório', '2024-09-23', '09:15:00', '2024-09-24', '13:00:00', 1, 0, NULL, 22, 25),
+(14, 'Olga', 'Chave de Grifo', 'Ajustes em tubulações', '2024-09-24', '11:45:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(15, 'Paulo', 'Balança', 'Pesagem de materiais', '2024-09-25', '08:00:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(16, 'Quiteria', 'Metrônomo', 'Ajuste de instrumentos', '2024-09-26', '10:00:00', '2024-09-27', '16:00:00', 1, 0, NULL, 22, 25),
+(17, 'Rafael', 'Ferro de solda', 'Trabalho de eletrônica', '2024-09-27', '12:30:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(18, 'Sofia', 'Compasso', 'Desenhos técnicos', '2024-09-28', '09:00:00', '2024-09-29', '14:00:00', 1, 0, NULL, 22, 25),
+(19, 'Thiago', 'Trena', 'Medições de área', '2024-09-29', '15:00:00', NULL, NULL, 0, 0, NULL, 22, 25),
+(20, 'Ursula', 'Pá', 'Jardinagem', '2024-09-30', '10:00:00', '2024-10-03', '13:47:58', 1, 0, NULL, 22, 25),
+(21, 'Teste', 'Testador', 'Observado', '2024-10-03', '13:48:00', '2024-10-03', '13:48:52', 1, 0, 123456, 22, 25);
+
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `is_admin`, `apagado`) VALUES
 (22, 'Administrador', 'admin@dominio.com', '$2y$10$OwH7OYFVJd.wkEUtfLfd8Ow7SmJSAfvADHPQBOrxxd/Di3eWa9dkm', 1, 0),
-(25, 'Usuário', 'usuario@dominio.com', '$2y$10$4U2hls4znkQ7.XHF1k8XFe/X57z4ySixzLcXzlQauQnaTSvT8BpXu', 0, 0);
+(25, 'Usuário', 'usuario@dominio.com', '$2y$10$4U2hls4znkQ7.XHF1k8XFe/X57z4ySixzLcXzlQauQnaTSvT8BpXu', 0, 0),
+(32, 'Docker', 'docker@dominio.com', '$2y$10$sRy58ntGgP.tBMpoScv00Ok8Ll7oKgq7EtKpDABlYitTQIh3cMhKO', 0, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -156,7 +160,9 @@ ALTER TABLE `sessoes`
 -- Índices de tabela `stocks`
 --
 ALTER TABLE `stocks`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_usuario_id_criacao` (`usuario_id_criacao`),
+  ADD KEY `fk_usuario_id_devolucao` (`usuario_id_devolucao`);
 
 --
 -- Índices de tabela `usuarios`
@@ -196,6 +202,13 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `sessoes`
   ADD CONSTRAINT `usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
+
+--
+-- Restrições para a tabela `stocks`
+--
+ALTER TABLE `stocks`
+  ADD CONSTRAINT `fk_usuario_id_criacao` FOREIGN KEY (`usuario_id_criacao`) REFERENCES `usuarios` (`id`),
+  ADD CONSTRAINT `fk_usuario_id_devolucao` FOREIGN KEY (`usuario_id_devolucao`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

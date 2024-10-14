@@ -32,8 +32,9 @@ if (isset($_COOKIE['token_sessao'])) {
                 $_SESSION['user_name'] = $usuario_logado['nome'];
                 $_SESSION['is_admin'] = $usuario_logado['is_admin'];
             } else {
-                // Se o token não for válido, destrói a sessão
+                // Se o token não for válido, destrói a sessão e o token
                 session_destroy();
+                setcookie('token_sessao','', time() -3600,  '/');
                 //$_SESSION['user_name'] = 'Else 1';
             }
 

@@ -12,8 +12,8 @@ $dateEnd = isset($_GET['date_end']) ? $_GET['date_end'] : null;
 // Consulta base
 $query = "SELECT s.*, u_criacao.nome AS nome_usuario_criacao, u_devolucao.nome AS nome_usuario_devolucao
     FROM stocks s
-    JOIN usuarios u_criacao ON s.usuario_id_criacao = u_criacao.id
-    JOIN usuarios u_devolucao ON s.usuario_id_devolucao = u_devolucao.id 
+    LEFT JOIN usuarios u_criacao ON s.usuario_id_criacao = u_criacao.id
+    LEFT JOIN usuarios u_devolucao ON s.usuario_id_devolucao = u_devolucao.id 
     WHERE s.devolvido = 1";
 
 // Condições dinâmicas para filtro de datas

@@ -362,8 +362,8 @@ else {
 
       $query = "SELECT s.*, u.nome AS nome_usuario
       FROM stocks s
-      JOIN usuarios u ON s.usuario_id_criacao = u.id
-      WHERE devolvido = 0;";
+      LEFT JOIN usuarios u ON s.usuario_id_criacao = u.id
+      WHERE s.devolvido = 0;";
 
     $stmt = $conn->prepare($query);
 
