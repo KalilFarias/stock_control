@@ -2,37 +2,39 @@
   include_once("templates/header.php");
 ?>
 
-    <div class="row align-items-center mb-5">
-        
-        <div class="col-md-7 col-lg-6 mt-3 mx-auto">
-            <div class="px-4 py-2 mt-4 mb-2 mx-auto col-lg-7 text-center">
-                <img src="img/logo_policia.png" alt="" class="img-fluid mt-5 rounded-3" width="300">
-
-            </div>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 text-center">
+            <img src="img/logo_policia.png" alt="Logo Polícia" class="img-fluid mt-5 mb-3" width="250">
+            <h2 class="fw-bold">Bem-vindo</h2>
+            <p class="text-muted">Por favor, efetue o login para acessar o sistema</p>
         </div>
 
-
-        <div class="col-md-12 col-lg-6">
-            <div class="px-4 py-2 mt-4 mb-2 mx-auto col-lg-7 text-center">
-                <h1 class="display-8 fw-bold">Efetue o login para acessar o sistema</h1>
-            </div>
-        
-            <div class="col-md-10 mx-auto col-lg-7">
-                <form class="p-4 p-md-5 rounded-3 form-custom" action="config/process.php" method="POST">
+        <div class="col-md-5">
+            <div class="card shadow-lg p-4 border-0 rounded-4">
+                <h3 class="text-center mb-4 text-primary">Login</h3>
+                <form action="config/process.php" method="POST">
                     <input type="hidden" name="type" value="login">
+                
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control form-field-custom" id="email-input" name="email" placeholder="seuemail@dominio.com.br">
-                        <label for="email-input" class="form-label-custom">E-mail</label>
+                        <input type="email" class="form-control" id="email-input" name="email" placeholder="seuemail@dominio.com.br" required>
+                        <label for="email-input">E-mail</label>
                     </div>
+
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control form-field-custom" id="password-input" name="senha" placeholder="Senha">
-                        <label for="password" class="form-label-custom">Senha</label>
+                        <input type="password" class="form-control" id="password-input" name="senha" placeholder="Senha" required>
+                        <label for="password-input">Senha</label>
                     </div>
-                    <div class="d-grid gap-3 col mx-auto">
-                        <button class="btn btn-primary btn-lg" type="submit">Entrar</button>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg rounded-pill shadow-sm" type="submit">
+                            Entrar
+                        </button>
                     </div>
                 </form>
+                <div class="text-center mt-3">
+                    <a href="#" class="text-decoration-none text-primary small">Esqueceu sua senha?</a>
+                </div>
             </div>
         </div>
-
     </div>
+</div>

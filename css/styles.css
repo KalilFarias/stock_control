@@ -189,7 +189,143 @@ body {
   border: 1px solid var(--cor-border);
 }
 
+/* Variáveis */
+:root {
+  --cor-primaria: #0056b3;
+  --cor-secundaria: #f8f9fa;
+  --cor-texto: #333;
+  --cor-label: #666;
+}
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-secundaria);
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Container da página */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Imagem */
+img.img-fluid {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  color: var(--cor-primaria);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.form-custom {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.form-field-custom {
+  border: 2px solid var(--cor-primaria);
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s;
+}
+
+.form-field-custom:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+}
+
+.form-label-custom {
+  color: var(--cor-label);
+  font-size: 0.9rem;
+}
+
+/* Botão */
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #003d80; /* Tom mais escuro para hover */
+}
+
+/* Espaçamento */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.px-4 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.p-md-5 {
+  padding: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  .form-custom {
+      padding: 20px;
+  }
+
+  img.img-fluid {
+      width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
   .table th, .table td {
     font-size: 0.9rem;
