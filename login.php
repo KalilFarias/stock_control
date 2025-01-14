@@ -2,6 +2,7 @@
   include_once("templates/header.php");
 ?>
 
+
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6 text-center">
